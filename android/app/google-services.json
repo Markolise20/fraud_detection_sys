@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "52304291679",
+    "project_id": "fraud-detection-sys-5c342",
+    "storage_bucket": "fraud-detection-sys-5c342.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52304291679:android:aca9f185d4cd1cf89678ea",
+        "android_client_info": {
+          "package_name": "com.company.fraud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGO-GW9A_3wGETajP25vybsvTvaAmuSWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52304291679:android:1f02684ae0df83679678ea",
+        "android_client_info": {
+          "package_name": "com.example.fraud_detection_sys"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGO-GW9A_3wGETajP25vybsvTvaAmuSWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

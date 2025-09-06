@@ -1,0 +1,11 @@
+node_modules
+.git
+__pycache__
+*.pyc
+.venv
+venv
+*.log
+emulator-data
+flutter_app/build  # Exclude Flutter build artifacts
+flutter_app/.flutter-plugins
+flutter_app/.flutter-plugins-dependencies

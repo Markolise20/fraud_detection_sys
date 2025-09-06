@@ -1,0 +1,88 @@
+mutation SeedDatabase @auth(level: USER) {
+  user_upsertMany(data: [
+    {
+      id: "6b40b025-88c8-48fb-bbca-a077246d3e5a",
+      createdAt: "2024-03-01T12:00:00Z",
+      displayName: "John Doe",
+      email: "john.doe@example.com",
+      photoUrl: "https://example.com/john.jpg",
+      role: "admin"
+    },
+    {
+      id: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      createdAt: "2024-03-05T18:30:00Z",
+      displayName: "Jane Smith",
+      email: "jane.smith@example.com",
+      photoUrl: "https://example.com/jane.jpg",
+      role: "user"
+    }
+  ])
+  report_upsertMany(data: [
+    {
+      id: "11223344-5566-7788-9900-aabbccddeeff",
+      submittedById: "6b40b025-88c8-48fb-bbca-a077246d3e5a",
+      category: "Phishing",
+      content: "Suspicious email asking for personal information.",
+      notes: "Possible scam.",
+      reportType: "Email",
+      status: "Open",
+      submissionDate: "2024-03-10T09:00:00Z"
+    },
+    {
+      id: "fedcba98-7654-3210-0fed-cba987654321",
+      submittedById: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      category: "Malware",
+      content: "Downloaded a file that triggered a virus warning.",
+      notes: "Need to investigate further.",
+      reportType: "File",
+      status: "In Progress",
+      submissionDate: "2024-03-12T15:45:00Z"
+    }
+  ])
+  analysisResult_upsertMany(data: [
+    {
+      reportId: "11223344-5566-7788-9900-aabbccddeeff",
+      analysisDate: "2024-03-11T10:00:00Z",
+      detectedUrls: "suspicious.url.com",
+      safetyScore: 30,
+      senderInfo: "unknown@example.com",
+      summary: "High probability of phishing.",
+      threatIndicators: "Malicious links, unknown sender"
+    },
+    {
+      reportId: "fedcba98-7654-3210-0fed-cba987654321",
+      analysisDate: "2024-03-13T16:00:00Z",
+      detectedUrls: "malware.site.com",
+      safetyScore: 85,
+      senderInfo: "N/A",
+      summary: "Confirmed malware infection.",
+      threatIndicators: "Executable file, virus detected"
+    }
+  ])
+  comment_upsertMany(data: [
+    {
+      reportId: "11223344-5566-7788-9900-aabbccddeeff",
+      userId: "6b40b025-88c8-48fb-bbca-a077246d3e5a",
+      commentText: "I think its dangerous, block the sender.",
+      createdAt: "2024-03-11T10:15:00Z"
+    },
+    {
+      reportId: "fedcba98-7654-3210-0fed-cba987654321",
+      userId: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      commentText: "Run a full system scan immediately.",
+      createdAt: "2024-03-13T16:10:00Z"
+    }
+  ])
+  threatCategory_upsertMany(data: [
+    {
+      id: "10000000-0000-0000-0000-000000000001",
+      name: "Phishing",
+      description: "Deceptive attempts to obtain sensitive information."
+    },
+    {
+      id: "20000000-0000-0000-0000-000000000002",
+      name: "Malware",
+      description: "Malicious software designed to damage or disrupt systems."
+    }
+  ])
+}

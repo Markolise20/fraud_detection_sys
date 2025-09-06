@@ -1,0 +1,23 @@
+version: '3.8'  # Remove or update to a supported version
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"  # Functions emulator
+      - "8080:8080"  # Firestore emulator
+      - "9099:9099"  # Auth emulator
+    volumes:
+      - ./backend:/app/backend
+      - ~/.config/firebase:/root/.config/firebase
+    environment:
+      - PROJECT_ID=fraud-detection-sys-5c342
+  flutter:
+    build:
+      context: .
+      dockerfile: flutter.Dockerfile
+    ports:
+      - "80:80"
+      
+  

@@ -1,0 +1,12 @@
+firebase_functions~=0.1.0
+Flask==2.3.2
+gunicorn==20.1.0
+google-generativeai==0.1.0
+firebase-admin==6.0.1
+dnspython==2.2.1
+python-whois==0.7.3
+validators==0.20.0
+functions-framework==3.*
+
+
+

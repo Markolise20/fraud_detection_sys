@@ -1,0 +1,49 @@
+query ListReports @auth(level: USER) {
+  reports {
+    id
+    category
+    content
+    notes
+    reportType
+    status
+    submissionDate
+    submittedBy {
+      id
+      displayName
+    }
+    analysisResults_on_report {
+      id
+      safetyScore
+    }
+    comments_on_report {
+      id
+      commentText
+    }
+  }
+}
+
+mutation AddComment($reportId: UUID!, $commentText: String!) @auth(level: USER) {
+  comment_insert(data: {
+    reportId: $reportId
+    userId_expr: "auth.uid"
+    commentText: $commentText
+    createdAt_expr: "request.time"
+  })
+}
+
+mutation UpdateReportStatus($id: UUID!, $status: String!) @auth(level: USER) {
+  report_update(
+    key: {id: $id}
+    data: {
+      status: $status
+    }
+  )
+}
+
+query GetUserReports @auth(level: USER) {
+  reports(where: {submittedById: {eq_expr: "auth.uid"}}) {
+    id
+    category
+    content
+  }
+}

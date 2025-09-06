@@ -1,0 +1,39 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  role: String
+}
+
+type Report @table {
+  submittedBy: User!
+  reportType: String!
+  content: String!
+  submissionDate: Timestamp!
+  status: String!
+  category: String
+  notes: String
+}
+
+type AnalysisResult @table {
+  report: Report!
+  analysisDate: Timestamp!
+  safetyScore: Int!
+  summary: String!
+  detectedUrls: String
+  senderInfo: String
+  threatIndicators: String
+}
+
+type ThreatCategory @table {
+  name: String!
+  description: String!
+}
+
+type Comment @table {
+  report: Report!
+  user: User!
+  commentText: String!
+  createdAt: Timestamp!
+}
