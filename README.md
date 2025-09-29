@@ -1,6 +1,7 @@
 # Big Phisher
 
-A phishing detection app is a security-focused mobile tool that helps users identify potentially fraudulent websites before they fall victim. It combines domain analysis, SSL verification, and machine learning powered by Gemini AI to evaluate URLs. With Firebase for authentication and storage, it provides fast, accessible, and user-friendly phishing protection in real time.
+A phishing detection app is a security-focused mobile tool that helps users identify potentially fraudulent websites before they fall victim. It combines domain analysis, SSL verification, and machine learning powered by Gemini AI to evaluate URLs. With Firebase for authentication and storage, it provides fast, accessible, and user-friendly phishing protection in real time. 
+https://appforshare.io/i/6oszJg  download here
 
 ## Getting Started
 
